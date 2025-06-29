@@ -1,0 +1,9 @@
+.hero .support-message {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  -webkit-backdrop-filter: blur(10px);  /* Added for Safari support */
+  backdrop-filter: blur(10px);          /* Standard property */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}

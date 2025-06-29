@@ -1,0 +1,3060 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f8f6f0;
+  position: relative;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header and Navigation */
+.header {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Desktop Navigation */
+.desktop-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.desktop-nav ul li {
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.desktop-nav ul li:hover {
+  color: #4CAF50;
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  width: 25px;
+  height: 20px;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  margin-bottom: 4px;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger span:last-child {
+  margin-bottom: 0;
+}
+
+/* Hamburger Animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Navigation Menu */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 2rem;
+}
+
+.mobile-nav-content ul {
+  list-style: none;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.mobile-nav-content ul li {
+  margin: 1.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.mobile-nav-content ul li:hover {
+  color: #4CAF50;
+}
+
+/* Mobile Language Selector */
+.mobile-language-selector {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.mobile-language-selector button {
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.mobile-language-selector button.active {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+  color: white;
+}
+
+.mobile-language-selector button:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Language selector */
+.language-selector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.language-selector button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.language-selector button.active {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+}
+
+.language-selector button:hover:not(.active) {
+  background-color: #e0e0e0;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.65)),
+    url('https://cdn.mawaqit.net/images/backend/mosque/99f3960e-6e4f-4dc5-93e7-58f0cec7aa1e/mosque/1eea8ee7-11dd-678a-aa6d-066ed47a7584.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #4CAF50;
+  font-weight: 400;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Container for sections */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Sections */
+section {
+  padding: 5rem 0;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  font-size: 2.5rem;
+}
+
+section h3 {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  font-size: 1.8rem;
+}
+
+/* About section */
+.about {
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="islamic-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M10,0 L20,10 L10,20 L0,10 Z" fill="none" stroke="%23DAA520" stroke-width="0.8" opacity="0.6"/><circle cx="10" cy="10" r="3" fill="none" stroke="%23B8860B" stroke-width="0.5" opacity="0.4"/><path d="M5,5 L15,15 M15,5 L5,15" stroke="%23CD853F" stroke-width="0.3" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23islamic-pattern)"/></svg>');
+  background-size: cover, 150px 150px;
+  background-position: center, 0 0;
+  position: relative;
+}
+
+.about .container {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 3rem 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.about > * {
+  position: relative;
+  z-index: 2;
+}
+
+.about h2 {
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.5rem;
+}
+
+.about p {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.8;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Prayer Times Section */
+.prayer-times {
+  background: 
+    linear-gradient(rgba(248, 246, 240, 0.8), rgba(248, 246, 240, 0.8)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="islamic-pattern-prayer" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M10,0 L20,10 L10,20 L0,10 Z" fill="none" stroke="%23DAA520" stroke-width="0.8" opacity="0.7"/><circle cx="10" cy="10" r="3" fill="none" stroke="%23B8860B" stroke-width="0.5" opacity="0.5"/><path d="M5,5 L15,5 L15,15 L5,15 Z" fill="none" stroke="%23CD853F" stroke-width="0.4" opacity="0.4"/><path d="M0,10 L20,10 M10,0 L10,20" stroke="%23DAA520" stroke-width="0.3" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23islamic-pattern-prayer)"/></svg>');
+  background-size: cover, 120px 120px;
+  background-position: center, 0 0;
+  padding: 60px 0;
+  position: relative;
+}
+
+.prayer-times > * {
+  position: relative;
+  z-index: 2;
+}
+
+.prayer-times .subtitle {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555;
+  font-size: 1.2rem;
+}
+
+.prayer-times-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.prayer-times-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.prayer-time {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.prayer-time:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.prayer-name {
+  font-weight: bold;
+  color: #1e3c72;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.prayer-hour {
+  font-size: 1.5rem;
+  color: #2a5298;
+}
+
+.next-prayer {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.next-prayer h3 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.next-prayer-time {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.countdown h4 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-value {
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 15px;
+  border-radius: 8px;
+  min-width: 60px;
+  display: inline-block;
+}
+
+.time-label {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.time-separator {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: -10px;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.error {
+  color: #e74c3c;
+}
+
+/* RTL Support for Prayer Times */
+[dir="rtl"] .prayer-times-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .next-prayer {
+  direction: rtl;
+}
+
+/* Responsive design for Prayer Times */
+@media (max-width: 768px) {
+  .prayer-times-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .countdown-timer {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .prayer-times-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .countdown-timer {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .time-separator {
+    display: none;
+  }
+}
+
+/* Monthly Prayer Calendar Section */
+.monthly-calendar {
+  background: 
+    linear-gradient(rgba(248, 246, 240, 0.9), rgba(248, 246, 240, 0.9)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="calendar-pattern" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse"><rect width="25" height="25" fill="none" stroke="%23DAA520" stroke-width="0.5" opacity="0.3"/><circle cx="12.5" cy="12.5" r="8" fill="none" stroke="%23B8860B" stroke-width="0.4" opacity="0.4"/><path d="M5,12.5 L20,12.5 M12.5,5 L12.5,20" stroke="%23CD853F" stroke-width="0.3" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23calendar-pattern)"/></svg>');
+  background-size: cover, 150px 150px;
+  background-position: center, 0 0;
+  padding: 60px 0;
+  position: relative;
+}
+
+.monthly-calendar > * {
+  position: relative;
+  z-index: 2;
+}
+
+.monthly-calendar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e3c72;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.monthly-calendar .subtitle {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.mosque-info {
+  text-align: center;
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mosque-info h3 {
+  color: #1e3c72;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.mosque-info p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.calendar-container {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr repeat(6, 0.8fr);
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.header-cell {
+  padding: 15px 8px;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-cell:last-child {
+  border-right: none;
+}
+
+.calendar-body {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.calendar-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr repeat(6, 0.8fr);
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+}
+
+.calendar-row:hover {
+  background-color: #f8f9fa;
+}
+
+.calendar-row:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.calendar-cell {
+  padding: 12px 8px;
+  text-align: center;
+  border-right: 1px solid #eee;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.calendar-cell:last-child {
+  border-right: none;
+}
+
+.calendar-cell.day-name {
+  font-weight: 600;
+  color: #1e3c72;
+}
+
+/* RTL Support for Monthly Calendar */
+[dir="rtl"] .calendar-header,
+[dir="rtl"] .calendar-row {
+  direction: rtl;
+}
+
+[dir="rtl"] .mosque-info {
+  direction: rtl;
+}
+
+/* Responsive design for Monthly Calendar */
+@media (max-width: 1024px) {
+  .calendar-header,
+  .calendar-row {
+    grid-template-columns: 1fr 1fr repeat(6, 0.7fr);
+  }
+  
+  .header-cell,
+  .calendar-cell {
+    padding: 10px 6px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-header,
+  .calendar-row {
+    grid-template-columns: 1fr repeat(6, 0.6fr);
+  }
+  
+  .header-cell:nth-child(2),
+  .calendar-cell:nth-child(2),
+  .header-cell:nth-child(3),
+  .calendar-cell:nth-child(3) {
+    display: none;
+  }
+  
+  .header-cell,
+  .calendar-cell {
+    padding: 8px 4px;
+    font-size: 0.75rem;
+  }
+  
+  .monthly-calendar h2 {
+    font-size: 2rem;
+  }
+  
+  .monthly-calendar .subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-header,
+  .calendar-row {
+    grid-template-columns: 1fr repeat(5, 0.5fr);
+  }
+  
+  .header-cell:nth-child(4),
+  .calendar-cell:nth-child(4) {
+    display: none;
+  }
+  
+  .header-cell,
+  .calendar-cell {
+    padding: 6px 2px;
+    font-size: 0.7rem;
+  }
+  
+  .mosque-info {
+    padding: 15px;
+  }
+  
+  .mosque-info h3 {
+    font-size: 1.3rem;
+  }
+  
+  .mosque-info p {
+    font-size: 1rem;
+  }
+}
+
+/* Live Stream Section */
+.live-stream {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+}
+
+.live-stream::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(40, 167, 69, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(40, 167, 69, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.live-stream .container {
+  position: relative;
+  z-index: 1;
+}
+
+.live-stream h2 {
+  text-align: center;
+  color: #2c5530;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.live-stream .subtitle {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #28a745;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.live-stream .description {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #495057;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.stream-schedule {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(40, 167, 69, 0.1);
+  margin-bottom: 3rem;
+  text-align: center;
+  border: 2px solid #28a745;
+}
+
+.stream-schedule h3 {
+  color: #2c5530;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.friday-time {
+  font-size: 1.3rem;
+  color: #28a745;
+  font-weight: 700;
+  margin: 0;
+}
+
+.stream-container {
+  margin-bottom: 3rem;
+}
+
+.stream-embed {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+}
+
+.stream-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 15px;
+}
+
+.stream-fallback {
+  background: linear-gradient(135deg, #2c5530 0%, #28a745 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.stream-fallback::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+}
+
+.stream-placeholder {
+  background: linear-gradient(135deg, #2c5530 0%, #28a745 100%);
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(40, 167, 69, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.stream-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.1) 10px,
+    rgba(255, 255, 255, 0.1) 20px
+  );
+  pointer-events: none;
+}
+
+.stream-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.stream-placeholder p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.stream-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.stream-info {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0.5rem 0;
+}
+
+.stream-button {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  border: 2px solid transparent;
+  min-width: 140px;
+}
+
+.stream-button.primary {
+  background: white;
+  color: #28a745;
+  border-color: white;
+}
+
+.stream-button.primary:hover {
+  background: #f8f9fa;
+  color: #28a745;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.stream-button.secondary {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+
+.stream-button.secondary:hover {
+  background: white;
+  color: #28a745;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.stream-button:visited {
+  text-decoration: none;
+}
+
+.stream-button.primary:visited {
+  color: #28a745;
+}
+
+.stream-button.secondary:visited {
+  color: white;
+}
+
+.technical-info {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(40, 167, 69, 0.1);
+  border-left: 5px solid #28a745;
+}
+
+.technical-info h3 {
+  color: #2c5530;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.technical-info ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.technical-info li {
+  padding: 0.5rem 0;
+  color: #495057;
+  font-size: 1rem;
+}
+
+.technical-info .note {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #6c757d;
+  font-style: italic;
+  margin: 0;
+  border-left: 3px solid #28a745;
+}
+
+/* Live Stream Section */
+.live-stream {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+}
+
+.live-stream h2 {
+  color: #1e3c72;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.live-stream .subtitle {
+  text-align: center;
+  color: #2a5298;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.live-stream .description {
+  text-align: center;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+  max-width: 800px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.stream-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stream-info {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stream-info h3 {
+  color: #2a5298;
+  margin-bottom: 10px;
+}
+
+.schedule-time {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1e3c72;
+}
+
+.youtube-embed {
+  text-align: center;
+  margin: 30px 0;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.youtube-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.stream-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.stream-button {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-align: center;
+  min-width: 180px;
+}
+
+.live-button {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.live-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+}
+
+.channel-button {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.channel-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.stream-note {
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 8px;
+  color: #856404;
+}
+
+.stream-note p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design for Live Stream */
+@media (max-width: 768px) {
+  .stream-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stream-button {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .youtube-embed {
+    margin: 20px 0;
+  }
+}
+
+/* Donations Section */
+.donations {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+}
+
+.donations h2 {
+  color: #1e3c72;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.donations h3 {
+  color: #2a5298;
+  margin: 30px 0 15px;
+}
+
+.donations p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Centered subtitle and description */
+.centered-subtitle {
+  text-align: center;
+  color: #2a5298;
+  margin: 30px 0 15px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.centered-description {
+  text-align: center;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+  max-width: 800px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Quran Quotes Styling with Islamic Frame */
+.quran-quotes {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8f6f0 0%, #fff 50%, #f8f6f0 100%);
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quran-quotes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    /* Corner decorations */
+    radial-gradient(circle at 20px 20px, #d4af37 2px, transparent 2px),
+    radial-gradient(circle at calc(100% - 20px) 20px, #d4af37 2px, transparent 2px),
+    radial-gradient(circle at 20px calc(100% - 20px), #d4af37 2px, transparent 2px),
+    radial-gradient(circle at calc(100% - 20px) calc(100% - 20px), #d4af37 2px, transparent 2px),
+    /* Islamic geometric pattern */
+    repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(212, 175, 55, 0.1) 10px, rgba(212, 175, 55, 0.1) 20px),
+    repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(212, 175, 55, 0.1) 10px, rgba(212, 175, 55, 0.1) 20px);
+  border: 3px solid #d4af37;
+  border-radius: 20px;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.quran-quotes h3 {
+  color: #2c5530;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-shadow: 1px 1px 2px rgba(212, 175, 55, 0.3);
+  position: relative;
+  z-index: 1;
+  padding-bottom: 15px;
+}
+
+.quran-quotes h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+.quran-quotes .quote {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #d4af37;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.2);
+  text-align: center;
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #2c5530;
+  white-space: pre-line;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+.quran-quotes .quote::before {
+  content: '❝';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 3.5rem;
+  color: #d4af37;
+  opacity: 0.8;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quran-quotes .quote::after {
+  content: '❞';
+  position: absolute;
+  bottom: -10px;
+  right: 20px;
+  font-size: 3.5rem;
+  color: #d4af37;
+  opacity: 0.8;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hadith Quote Styling with Islamic Frame */
+.hadith-quote {
+  margin: 3rem 0;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #f0f8f0 0%, #fff 50%, #f0f8f0 100%);
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(40, 167, 69, 0.2);
+  text-align: center;
+  font-style: italic;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hadith-quote::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    /* Corner decorations */
+    radial-gradient(circle at 20px 20px, #28a745 2px, transparent 2px),
+    radial-gradient(circle at calc(100% - 20px) 20px, #28a745 2px, transparent 2px),
+    radial-gradient(circle at 20px calc(100% - 20px), #28a745 2px, transparent 2px),
+    radial-gradient(circle at calc(100% - 20px) calc(100% - 20px), #28a745 2px, transparent 2px),
+    /* Islamic geometric pattern */
+    repeating-linear-gradient(45deg, transparent, transparent 12px, rgba(40, 167, 69, 0.1) 12px, rgba(40, 167, 69, 0.1) 24px),
+    repeating-linear-gradient(-45deg, transparent, transparent 12px, rgba(40, 167, 69, 0.1) 12px, rgba(40, 167, 69, 0.1) 24px);
+  border: 3px solid #28a745;
+  border-radius: 20px;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.hadith-quote::after {
+  content: '☪';
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  color: #28a745;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.hadith-quote p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #2c5530;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(40, 167, 69, 0.1);
+  white-space: pre-line;
+}
+
+.objectives {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.objectives h3 {
+  color: #1e3c72;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.objectives ul {
+  list-style: none;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.objectives ul li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  color: #555;
+  line-height: 1.6;
+}
+
+.objectives ul li::before {
+  content: '•';
+  color: #007bff;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.donation-info {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.iban-container {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.donation-info {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.donation-info h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.donation-info p {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.iban {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.copy-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.copy-button:hover {
+  background-color: #0056b3;
+}
+
+.copy-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s ease;
+}
+
+.copy-button:hover {
+  background-color: #388e3c;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(46, 125, 50, 0.35);
+}
+
+.copy-button:hover::before {
+  left: 100%;
+}
+
+.copy-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(46, 125, 50, 0.25);
+}
+
+.copy-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: all 0.6s ease;
+}
+
+.location {
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+.thank-you {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+/* RTL Support for Quran Quotes */
+[dir="rtl"] .quran-quotes {
+  border-left: none;
+  border-right: 5px solid #1e3c72;
+}
+
+[dir="rtl"] .quran-quotes .quote {
+  border-right: none;
+  border-left: 3px solid #d4af37;
+}
+
+[dir="rtl"] .quran-quotes .quote::before {
+  left: auto;
+  right: 10px;
+}
+
+/* RTL Support for Donations */
+[dir="rtl"] .iban-display {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .iban-number {
+  direction: ltr;
+  text-align: center;
+}
+
+/* Responsive Design for Donations */
+@media (max-width: 768px) {
+  .live-stream {
+    padding: 3rem 0;
+  }
+  
+  .live-stream h2 {
+    font-size: 2rem;
+  }
+  
+  .live-stream .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .live-stream .description {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .stream-schedule {
+    margin: 0 1rem 2rem 1rem;
+    padding: 1.5rem;
+  }
+  
+  .stream-schedule h3 {
+    font-size: 1.3rem;
+  }
+  
+  .friday-time {
+    font-size: 1.1rem;
+  }
+  
+  .stream-embed {
+    margin: 0 1rem;
+    padding-bottom: 56.25%;
+  }
+  
+  .stream-fallback {
+    margin: 0 1rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  .stream-placeholder {
+    margin: 0 1rem;
+    padding: 3rem 1.5rem;
+  }
+  
+  .stream-icon {
+    font-size: 3rem;
+  }
+  
+  .stream-placeholder p,
+  .stream-fallback p {
+    font-size: 1rem;
+  }
+  
+  .stream-info {
+    font-size: 0.8rem;
+  }
+  
+  .stream-actions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .stream-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    min-width: 120px;
+  }
+  
+  .technical-info {
+    margin: 0 1rem;
+    padding: 1.5rem;
+  }
+  
+  .technical-info h3 {
+    font-size: 1.2rem;
+  }
+  
+  .technical-info li {
+    font-size: 0.9rem;
+  }
+
+  .donations {
+    padding: 3rem 1rem;
+  }
+  
+  .donations h2 {
+    font-size: 2rem;
+  }
+  
+  .iban-container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+  }
+  
+  .iban-display {
+    flex-direction: column;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+  
+  .iban-number {
+    font-size: 0.9rem;
+    word-break: break-all;
+    padding: 1rem;
+  }
+}
+
+.copy-btn:hover {
+  background: #218838;
+}
+
+.donation-info {
+  color: #666;
+  font-style: italic;
+  margin: 20px 0;
+}
+
+.thank-you {
+  color: #2c5530;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-top: 20px;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .language-selector {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .iban-display {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .donations {
+  text-align: right;
+}
+
+[dir="rtl"] .language-selector p {
+  margin-right: 0;
+  margin-left: 15px;
+}
+
+/* Contact information RTL fixes */
+[dir="rtl"] .contact-info {
+  text-align: right;
+}
+
+/* Phone and email numbers should remain LTR */
+[dir="rtl"] .phone,
+[dir="rtl"] .email {
+  direction: ltr;
+  unicode-bidi: embed;
+  display: inline;
+  font-family: 'Courier New', monospace;
+}
+
+/* Footer contact info RTL */
+[dir="rtl"] .footer-section {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-section .phone,
+[dir="rtl"] .footer-section .email {
+  direction: ltr;
+  unicode-bidi: embed;
+  display: inline;
+  font-family: 'Courier New', monospace;
+}
+
+/* Ensure contact paragraphs are right-aligned in RTL */
+[dir="rtl"] .contact-info p,
+[dir="rtl"] .footer-section p {
+  text-align: right;
+  direction: rtl;
+}
+
+/* IBAN number specific styling */
+[dir="rtl"] .iban-number {
+  direction: ltr !important;
+  unicode-bidi: embed;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+}
+
+/* Fix excessive right spacing in RTL */
+[dir="rtl"] .container {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+[dir="rtl"] .header {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+[dir="rtl"] .hero {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+[dir="rtl"] section {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+[dir="rtl"] .nav ul {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+[dir="rtl"] body {
+  overflow-x: hidden;
+}
+
+[dir="rtl"] .app {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Add these styles to your existing App.css */
+
+/* Services Section */
+.services {
+  padding: 60px 20px;
+  background: #f8f9fa;
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2c5530;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.service-item {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+}
+
+.service-item h3 {
+  color: #2c5530;
+  margin-bottom: 15px;
+}
+
+/* Contact section */
+.contact {
+  background-color: #fff;
+}
+
+.contact-info {
+  text-align: center;
+}
+
+.contact-info p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Footer */
+.footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 3rem 0 1rem;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #4CAF50;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  color: #bdc3c7;
+  transition: color 0.3s;
+}
+
+.footer-section ul li:hover {
+  color: #4CAF50;
+}
+
+.footer-section p {
+  margin-bottom: 0.8rem;
+  color: #bdc3c7;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #34495e;
+  color: #bdc3c7;
+}
+
+/* RTL Support */
+[dir="rtl"] .nav ul {
+  padding-right: 0;
+}
+
+[dir="rtl"] .footer-section ul {
+  padding-right: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 1rem;
+    position: relative;
+  }
+  
+  .logo {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+  
+  .nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .nav ul li {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    background: rgba(44, 62, 80, 0.1);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav ul li:hover {
+    background: rgba(44, 62, 80, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .language-selector {
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .language-selector button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .hero {
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .cta-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .about .container {
+    margin: 1rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  .about h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .prayer-times {
+    padding: 3rem 1rem;
+  }
+  
+  .prayer-times h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .next-prayer {
+    margin-top: 2rem;
+    padding: 1.5rem;
+  }
+  
+  .next-prayer h3 {
+    font-size: 1.2rem;
+  }
+  
+  .next-prayer-time {
+    font-size: 1.8rem;
+  }
+  
+  .quran-quotes {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+  
+  .quran-quotes h3 {
+    font-size: 1.5rem;
+  }
+  
+  .quran-quotes .quote {
+    padding: 1.5rem;
+    font-size: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .hadith-quote {
+    margin: 2rem 1rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  .hadith-quote p {
+    font-size: 1.1rem;
+    white-space: pre-line;
+  }
+  
+  .iban-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .iban {
+    font-size: 0.85rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 1.4;
+    text-align: center;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .copy-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 25px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .copy-button:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+  }
+  
+  .objectives, .donation-info {
+    padding: 1.5rem;
+    margin: 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .donation-info {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .donation-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #2c3e50;
+  }
+  
+  .donation-info p {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  .objectives h3 {
+    font-size: 1.3rem;
+  }
+  
+  .objectives ul li {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .contact {
+    padding: 3rem 1rem;
+  }
+  
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+  
+  .contact-info p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer {
+    padding: 2rem 1rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .footer-section p, .footer-section ul li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Enhanced mobile optimizations for very small screens */
+@media (max-width: 480px) {
+  .header {
+    padding: 0.8rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .logo {
+    font-size: 1.2rem;
+    order: 1;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav {
+    order: 3;
+    width: 100%;
+  }
+  
+  .nav ul {
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.5rem;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 10px;
+  }
+  
+  .nav ul li {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.8rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .nav ul li:hover {
+    background: #4CAF50;
+    color: white;
+    transform: translateY(-1px);
+  }
+  
+  .language-selector {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+  
+  .language-selector button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 20px;
+  }
+  
+  .hero {
+    padding: 3rem 1rem;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    line-height: 1.2;
+  }
+  
+  .hero h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .cta-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+  }
+  
+  .about .container {
+    margin: 0.5rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  .about h2 {
+    font-size: 1.5rem;
+  }
+  
+  .about p {
+    font-size: 0.9rem;
+  }
+  
+  .prayer-times {
+    padding: 3rem 1rem;
+  }
+  
+  .prayer-times h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .prayer-times .subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #666;
+  }
+  
+  .prayer-times-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .prayer-time {
+    padding: 1.2rem;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    border: 1px solid rgba(76, 175, 80, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .prayer-time:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: rgba(76, 175, 80, 0.3);
+  }
+  
+  .prayer-name {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .prayer-hour {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2a5298;
+  }
+  
+  .next-prayer {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  }
+  
+  .next-prayer h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .next-prayer-time {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .time-unit {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 0.5rem;
+    min-width: 50px;
+    text-align: center;
+  }
+  
+  .time-value {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .time-label {
+    display: block;
+    font-size: 0.7rem;
+    opacity: 0.9;
+  }
+  
+  .donations {
+    padding: 3rem 1rem;
+  }
+  
+  .donations h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .centered-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #4CAF50;
+  }
+  
+  .centered-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .quran-quotes, .hadith-quote {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quran-quotes h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    text-align: center;
+  }
+  
+  .quran-quotes .quote {
+    padding: 1.2rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    background: white;
+    border-radius: 10px;
+    border-left: 4px solid #4CAF50;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .hadith-quote {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+  }
+  
+  .hadith-quote p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0;
+    white-space: pre-line;
+  }
+  
+  .objectives {
+    padding: 1.5rem;
+    margin: 1rem 0;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .objectives h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    text-align: center;
+  }
+  
+  .objectives ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .objectives ul li {
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #4CAF50;
+    font-size: 0.95rem;
+  }
+  
+  .donation-info {
+    padding: 1.5rem;
+    margin: 1rem 0;
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .donation-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+  }
+  
+  .iban-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .iban {
+    font-size: 0.8rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 1.4;
+    text-align: center;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .copy-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .copy-button:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+  }
+  
+  .contact {
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  }
+  
+  .contact h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #2c3e50;
+  }
+  
+  .contact-info {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #4CAF50;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  
+  .contact-info p strong {
+    color: #2c3e50;
+    font-weight: 600;
+  }
+  
+  .footer {
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .footer-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+  }
+  
+  .footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #4CAF50;
+    font-weight: 600;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .footer-section ul li:hover {
+    background: rgba(76, 175, 80, 0.3);
+    transform: translateX(5px);
+  }
+  
+  .footer-section p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+  }
+  
+  .footer-bottom {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+  }
+  
+  .footer-bottom p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin: 0;
+  }
+}
+
+.hero .support-message {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero .support-message h3 {
+  margin-bottom: 1rem;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.hero .support-message p {
+  margin-bottom: 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero .support-message .thank-you {
+  font-style: italic;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* RTL support for the support message */
+[dir="rtl"] .hero .support-message {
+  text-align: right;
+}
+
+/* Enhanced Mobile Optimizations */
+@media (max-width: 768px) {
+  /* Improve touch targets */
+  button, .nav ul li, .copy-button, .cta-button {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem 1.5rem;
+  }
+  
+  /* Prevent zoom on input focus */
+  input, select, textarea {
+    font-size: 16px;
+  }
+  
+  /* Smooth scrolling for mobile */
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Optimize viewport for mobile */
+  body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Better spacing for mobile content */
+  .container {
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+  
+  /* Mobile header optimization */
+  .header {
+    padding: 0.75rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  /* Hide desktop navigation on mobile */
+  .desktop-nav,
+  .desktop-language {
+    display: none;
+  }
+
+  /* Show mobile menu toggle */
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  /* Show mobile navigation */
+  .mobile-nav {
+    display: block;
+  }
+
+  /* Ensure mobile language selector is visible */
+  .mobile-language-selector {
+    display: flex !important;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .mobile-language-selector button {
+    display: block !important;
+    padding: 0.75rem 1.5rem;
+    min-width: 60px;
+  }
+  
+  /* Mobile hero section */
+  .hero {
+    min-height: 70vh;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  
+  .hero h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+  
+  /* Mobile sections */
+  section {
+    padding: 3rem 0;
+  }
+  
+  section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Mobile prayer times */
+  .prayer-times-grid {
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+  }
+  
+  .prayer-time {
+    min-height: 80px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .prayer-time h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .prayer-time .time {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  /* Mobile countdown */
+  .countdown {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+  }
+  
+  .countdown-timer {
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .time-unit {
+    min-width: 60px;
+    text-align: center;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+  }
+  
+  .time-unit .number {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+  }
+  
+  .time-unit .label {
+    font-size: 0.8rem;
+    opacity: 0.9;
+  }
+  
+  /* Mobile about section */
+  .about .container {
+    padding: 2rem 1rem;
+    margin: 1rem;
+  }
+  
+  /* Mobile donations */
+  .donations {
+    overflow-x: hidden;
+    padding: 3rem 1rem;
+  }
+  
+  .iban-container {
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+  
+  .iban-display {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .iban-number {
+    font-size: 0.9rem;
+    word-break: break-all;
+    text-align: center;
+    padding: 0.75rem;
+    line-height: 1.4;
+  }
+  
+  /* Mobile footer */
+  .footer {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .footer-section {
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-section p, .footer-section a {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+  
+  .prayer-times-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+  }
+  
+  .nav ul {
+    gap: 1.5rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+  
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+  
+  .hero p {
+    font-size: 0.9rem;
+  }
+  
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  .header {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .language-selector button {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+  }
+  
+  .prayer-time {
+    padding: 0.75rem;
+    min-height: 70px;
+  }
+  
+  .time-unit {
+    min-width: 50px;
+    padding: 0.4rem;
+  }
+  
+  .time-unit .number {
+    font-size: 1rem;
+  }
+  
+  .time-unit .label {
+    font-size: 0.7rem;
+  }
+  
+  section {
+    padding: 2rem 0;
+  }
+  
+  section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .iban-number {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+  
+  .footer {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  /* IBAN específico para pantallas muy pequeñas */
+  .iban-container {
+    padding: 0.8rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+  }
+  
+  .iban {
+    font-size: 0.75rem;
+    padding: 0.8rem;
+    letter-spacing: 0.3px;
+    min-height: 50px;
+    line-height: 1.3;
+  }
+  
+  .copy-button {
+    padding: 0.7rem 1rem;
+    font-size: 0.8rem;
+    max-width: 180px;
+  }
+  
+  .donation-info {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .donation-info h3 {
+    font-size: 1.2rem;
+  }
+  
+  .donation-info p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    min-height: 50vh;
+    padding: 2rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .countdown-timer {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+}
+
+/* High DPI mobile screens */
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+  .quran-quotes .quote::before,
+  .quran-quotes .quote::after {
+    font-size: 3rem;
+  }
+  
+  .hadith-quote::after {
+    font-size: 1.8rem;
+  }
+  
+  /* High DPI mobile optimizations */
+  .prayer-time {
+    border: 0.5px solid rgba(76, 175, 80, 0.3);
+  }
+  
+  .cta-button, .copy-button {
+    border: 0.5px solid transparent;
+  }
+  
+  /* Sharper text rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* RTL mobile optimizations */
+@media (max-width: 768px) {
+  [dir="rtl"] .mobile-nav-content ul {
+    text-align: right;
+  }
+
+  [dir="rtl"] .mobile-language-selector {
+    flex-direction: row-reverse;
+  }
+
+  [dir="rtl"] .footer-content {
+    text-align: right;
+  }
+
+  [dir="rtl"] .iban-display {
+    flex-direction: row-reverse;
+  }
+
+  /* RTL hamburger positioning */
+  [dir="rtl"] .mobile-menu-toggle {
+    order: -1;
+  }
+
+  [dir="rtl"] .header {
+    flex-direction: row;
+  }
+  
+  [dir="rtl"] .nav ul {
+    text-align: center;
+  }
+  
+  [dir="rtl"] .language-selector {
+    justify-content: center;
+  }
+  
+  /* IBAN RTL específico */
+  [dir="rtl"] .iban-container {
+    direction: ltr;
+    text-align: center;
+  }
+  
+  [dir="rtl"] .iban {
+    direction: ltr;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+  }
+  
+  [dir="rtl"] .copy-button {
+    direction: rtl;
+  }
+  
+  [dir="rtl"] .donation-info h3 {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .donation-info p {
+    text-align: right;
+  }
+}
